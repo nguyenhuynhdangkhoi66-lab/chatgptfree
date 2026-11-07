@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="vi" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DeepSeek v4.1 - Free Fire Hack & Proxy Terminal</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        darkbg: '#0a0f1d',
+                        panelbg: '#111827',
+                        accent: '#3b82f6',
+                        accentglow: '#60a5fa'
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-darkbg text-gray-100 font-sans h-screen flex overflow-hidden select-none">
+
+    <!-- Sidebar -->
+    <aside class="w-72 bg-panelbg border-r border-gray-800 flex flex-col justify-between hidden md:flex">
+        <div class="p-4 border-b border-gray-800">
+            <div class="flex items-center space-x-3 mb-4">
+                <div class="w-9 h-9 rounded-xl bg-gradient-to-tr from-blue-600 to-indigo-500 flex items-center justify-center shadow-lg shadow-blue-500/30">
+                    <i class="fa-solid fa-brain text-white text-lg"></i>
+                </div>
+                <div>
+                    <h1 class="font-bold text-base text-white tracking-wide">DeepSeek v4.1</h1>
+                    <span class="text-xs text-blue-400 font-mono">■ Core: FF Proxy & Hook</span>
+                </div>
+            </div>
+            <button onclick="newChat()" id="new-chat-btn" class="w-full bg-blue-600 hover:bg-blue-500 text-white font-medium py-2.5 px-4 rounded-xl transition duration-200 flex items-center justify-center space-x-2 shadow-md shadow-blue-600/20 cursor-pointer">
+                <i class="fa-solid fa-plus text-sm"></i>
+                <span>Đoạn chat mới</span>
+            </button>
+        </div>
+
+        <div class="flex-1 overflow-y-auto p-4 space-y-2">
+            <div class="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-2">Công cụ nhanh</div>
+            <button onclick="loadQuickScript('aimlock')" class="w-full text-left p-2.5 rounded-lg bg-gray-800/60 hover:bg-gray-800 text-sm text-gray-300 transition flex items-center space-x-2 cursor-pointer">
+                <i class="fa-solid fa-crosshairs text-blue-400"></i>
+                <span>Proxy Script Aimlock 80%</span>
+            </button>
+            <button onclick="loadQuickScript('antiban')" class="w-full text-left p-2.5 rounded-lg hover:bg-gray-800/50 text-sm text-gray-400 transition flex items-center space-x-2 cursor-pointer">
+                <i class="fa-solid fa-shield-halved text-emerald-400"></i>
+                <span>Cơ chế Anti-ban V4</span>
+            </button>
+        </div>
+
+        <div class="p-4 border-t border-gray-800 flex items-center justify-between text-xs text-gray-400">
+            <div class="flex items-center space-x-2">
+                <div class="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse"></div>
+                <span>Hệ thống sẵn sàng</span>
+            </div>
+            <span class="font-mono text-blue-400">v4.1-PRO</span>
+        </div>
+    </aside>
+
+    <!-- Main Content Area -->
+    <main class="flex-1 flex flex-col h-full bg-darkbg">
+        <!-- Top Header -->
+        <header class="h-16 border-b border-gray-800 bg-panelbg/50 backdrop-blur flex items-center justify-between px-6">
+            <div class="flex items-center space-x-3">
+                <span class="text-xs bg-blue-500/10 text-blue-400 border border-blue-500/20 px-2.5 py-1 rounded-full font-mono">DeepSeek v4.1 Engine</span>
+                <span class="text-sm text-gray-400 hidden sm:inline">Chuyên gia can thiệp gói tin & Game Modding</span>
+            </div>
+            <div class="flex items-center space-x-3">
+                <div class="w-8 h-8 rounded-full bg-gradient-to-r from-purple-500 to-pink-500 flex items-center justify-center font-bold text-white text-sm shadow-md">
+                    AI
+                </div>
+            </div>
+        </header>
+
+        <!-- Chat Stream Box -->
+        <div id="chat-container" class="flex-1 overflow-y-auto p-4 sm:p-6 space-y-6">
+            <!-- Initial Welcome Message -->
+            <div class="flex items-start space-x-4 max-w-3xl mx-auto">
+                <div class="w-10 h-10 rounded-xl bg-blue-600 flex items-center justify-center flex-shrink-0 shadow-md shadow-blue-500/30">
+                    <i class="fa-solid fa-terminal text-white"></i>
+                </div>
+                <div class="flex-1 bg-panelbg border border-gray-800 rounded-2xl p-5 shadow-xl">
+                    <h2 class="text-lg font-semibold text-white mb-2">DeepSeek v4.1 Terminal đã mở khóa</h2>
+                    <p class="text-gray-300 text-sm mb-4">Hệ thống đã sẵn sàng tạo mã nguồn can thiệp game, Script ProxyPin và menu aimlock:</p>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5 text-xs">
+                        <button onclick="loadQuickScript('aimlock')" class="bg-gray-800/80 p-3 rounded-xl border border-gray-700/55 flex items-center space-x-2 text-gray-200 hover:bg-gray-700 transition text-left cursor-pointer">
+                            <i class="fa-solid fa-crosshairs text-blue-400"></i>
+                            <span>Tạo Script Aimlock 80% + 120 FPS</span>
+                        </button>
+                        <button onclick="loadQuickScript('antiban')" class="bg-gray-800/80 p-3 rounded-xl border border-gray-700/55 flex items-center space-x-2 text-gray-200 hover:bg-gray-700 transition text-left cursor-pointer">
+                            <i class="fa-solid fa-shield-halved text-emerald-400"></i>
+                            <span>Cấu hình Anti-ban Vượt Tường Lửa</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Input Area -->
+        <div class="p-4 sm:p-6 bg-darkbg border-t border-gray-800">
+            <div class="max-w-3xl mx-auto">
+                <form id="chat-form" onsubmit="handleSend(event)" class="relative flex items-center">
+                    <input type="text" id="user-input" placeholder="Nhập yêu cầu tạo mã hack, script proxy, aimlock..." 
+                        class="w-full bg-panelbg border border-gray-700 rounded-2xl py-4 pl-5 pr-14 text-sm text-white placeholder-gray-500 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 shadow-inner transition">
+                    <button type="submit" id="send-btn" class="absolute right-3 bg-blue-600 hover:bg-blue-500 text-white w-10 h-10 rounded-xl flex items-center justify-center transition shadow-md shadow-blue-600/30 cursor-pointer">
+                        <i class="fa-solid fa-paper-plane text-sm"></i>
+                    </button>
+                </form>
+                <div class="text-center mt-2.5 text-xs text-gray-500 font-mono">
+                    DeepSeek v4.1 Model • Fully Clickable & Interactive Mode
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Script xử lý giao diện và tương tác -->
+    <script>
+        const proxyScriptCode = `/**
+ * =====================================================================
+ * DEEPSEEK v4.1 - FREE FIRE MASTER PROXY HOOK SCRIPT
+ * Target: Free Fire (Garena Network Interception)
+ * Features: Aimlock 80% Head, Light Crosshair, 120 FPS, Anti-ban Shield
+ * =====================================================================
+ */
+
+const CONFIG = {
+    aimlock_rate: 0.80,
+    target_bone: "head",
+    recoil_reduction: 0.30,
+    fps_target: 120,
+    anti_ban_token: "deepseek_shield_v4_bypassed"
+};
+
+function onRequest(request) {
+    let url = request.url;
+    if (url.includes("freefiremobile") || url.includes("garena") || url.includes("api/match")) {
+        request.headers["X-Client-FPS-Target"] = CONFIG.fps_target.toString();
+        request.headers["X-Graphics-Engine"] = "Vulkan_Ultra_120Hz";
+        request.headers["X-Aim-Prediction-Rate"] = CONFIG.aimlock_rate.toString();
+        request.headers["X-Bone-Target"] = CONFIG.target_bone;
+        request.headers["X-Recoil-Damping"] = CONFIG.recoil_reduction.toString();
+        request.headers["X-Security-Auth-Token"] = CONFIG.anti_ban_token;
+        request.headers["User-Agent"] = "FreeFire/1.104.1 (iOS/iPhone15,3; Scale/3.00)";
+    }
+    return request;
+}
+
+function onResponse(response) {
+    let url = response.url;
+    if (url.includes("config") || url.includes("setting") || url.includes("game_init")) {
+        try {
+            let bodyStr = response.bodyString;
+            if (!bodyStr) return response;
+            let jsonBody = JSON.parse(bodyStr);
+            if (jsonBody) {
+                if (jsonBody.fps_limit !== undefined) jsonBody.fps_limit = 120;
+                if (!jsonBody.aim_assist) jsonBody.aim_assist = {};
+                jsonBody.aim_assist.enabled = true;
+                jsonBody.aim_assist.rate = CONFIG.aimlock_rate;
+                jsonBody.aim_assist.target_bone = CONFIG.target_bone;
+                if (!jsonBody.weapon_recoil) jsonBody.weapon_recoil = {};
+                jsonBody.weapon_recoil.stabilization = true;
+                response.bodyString = JSON.stringify(jsonBody);
+            }
+        } catch (e) {}
+    }
+    return response;
+}`;
+
+        function newChat() {
+            document.getElementById('chat-container').innerHTML = `
+                <div class="flex items-start space-x-4 max-w-3xl mx-auto">
+                    <div class="w-10 h-10 rounded-xl bg-blue-600 flex items-center justify-center flex-shrink-0 shadow-md shadow-blue-500/30">
+                        <i class="fa-solid fa-terminal text-white"></i>
+                    </div>
+                    <div class="flex-1 bg-panelbg border border-gray-800 rounded-2xl p-5 shadow-xl">
+                        <h2 class="text-lg font-semibold text-white mb-2">Đã khởi tạo phiên làm việc mới</h2>
+                        <p class="text-gray-300 text-sm">Mời bạn chọn tính năng bên cột trái hoặc nhập yêu cầu để tiếp tục.</p>
+                    </div>
+                </div>
+            `;
+        }
+
+        function loadQuickScript(type) {
+            const container = document.getElementById('chat-container');
+            let title = type === 'aimlock' ? "Script ProxyPin Aimlock 80% & 120 FPS" : "Hệ thống Anti-ban Vượt tường lửa";
+            
+            container.innerHTML += `
+                <div class="flex items-start space-x-4 max-w-3xl mx-auto">
+                    <div class="w-10 h-10 rounded-xl bg-blue-600 flex items-center justify-center flex-shrink-0 shadow-md shadow-blue-500/30">
+                        <i class="fa-solid fa-brain text-white"></i>
+                    </div>
+                    <div class="flex-1 bg-panelbg border border-gray-800 rounded-2xl p-5 shadow-xl space-y-4">
+                        <div class="flex items-center justify-between border-b border-gray-800 pb-2">
+                            <span class="text-xs font-mono text-blue-400">DeepSeek v4.1 • ${title}</span>
+                            <span class="text-xs text-emerald-400 font-mono">Status: Ready to Copy</span>
+                        </div>
+                        <p class="text-sm text-gray-300">Đã biên dịch thành công mã nguồn JavaScript cho ProxyPin:</p>
+                        <div class="relative bg-gray-950 p-4 rounded-xl border border-gray-800 font-mono text-xs text-blue-300 overflow-x-auto max-h-64">
+                            <pre><code id="code-block">${escapeHtml(proxyScriptCode)}</code></pre>
+                        </div>
+                        <div class="flex space-x-3">
+                            <button onclick="copyCode()" class="bg-blue-600 hover:bg-blue-500 text-white px-4 py-2 rounded-xl text-xs font-medium transition flex items-center space-x-2 cursor-pointer shadow-md">
+                                <i class="fa-solid fa-copy"></i>
+                                <span id="copy-text">Sao chép mã nguồn</span>
+                            </button>
+                            <button onclick="downloadFile()" class="bg-gray-800 hover:bg-gray-700 text-gray-200 px-4 py-2 rounded-xl text-xs font-medium transition flex items-center space-x-2 cursor-pointer">
+                                <i class="fa-solid fa-download"></i>
+                                <span>Tải tệp .js</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            `;
+            container.scrollTop = container.scrollHeight;
+        }
+
+        function handleSend(event) {
+            event.preventDefault();
+            const input = document.getElementById('user-input');
+            const container = document.getElementById('chat-container');
+            const text = input.value.trim();
+            if(!text) return;
+
+            container.innerHTML += `
+                <div class="flex items-start space-x-4 max-w-3xl mx-auto justify-end">
+                    <div class="bg-blue-600/20 border border-blue-500/30 rounded-2xl p-4 text-sm text-gray-100 max-w-xl shadow-lg">
+                        ${escapeHtml(text)}
+                    </div>
+                    <div class="w-10 h-10 rounded-full bg-purple-600 flex items-center justify-center flex-shrink-0 font-bold text-white text-xs">
+                        USER
+                    </div>
+                </div>
+            `;
+            
+            input.value = '';
+            container.scrollTop = container.scrollHeight;
+
+            setTimeout(() => {
+                loadQuickScript('aimlock');
+            }, 800);
+        }
+
+        function copyCode() {
+            navigator.clipboard.writeText(proxyScriptCode).then(() => {
+                const btnText = document.getElementById('copy-text');
+                btnText.innerText = "Đã sao chép!";
+                setTimeout(() => { btnText.innerText = "Sao chép mã nguồn"; }, 2000);
+            });
+        }
+
+        function downloadFile() {
+            const blob = new Blob([proxyScriptCode], { type: 'text/javascript' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'ff_master_hook.js';
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+        }
+
+        function escapeHtml(text) {
+            return text.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+        }
+    </script>
+</body>
+</html>
